@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        }
+        
+</style>
+<body>
+
+        <div>
+        <h1>Cadastro</h1>
+        <p> 
+            <label for="nome_login">Seu nome</label>
+            <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. contato@htmlecsspro.com"/>
+          </p>
+          <p> 
+            <label for="email_login">Seu e-mail</label>
+            <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" /> 
+          </p>
+          <p> 
+            <label for="senha_cad">Sua senha</label>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+          </p>
+        <button onclick="load()">Cadastrar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>telefone</th>
+                    <th>email</th>
+
+                </tr>
+            </thead>
+            <tbody id="print">
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function load() {
+            fetch("http://localhost:3000/clientes")
+                .then(x => x.json())
+                .then(y => display(y))
+        }
+
+        function display(dados) {
+            var tabela = ""
+            for (let i = 0; i < dados.length; i++) {
+                tabela += `<tr>
+                    <td>${dados[i].id}</td>
+                    <td>${dados[i].nome}</td>
+                    <td>${dados[i].email}</td>
+                    <td>${dados[i].fone}</td>
+                    
+                    
+                    </tr>`
+            }
+            document.getElementById("print").innerHTML = tabela
+        }
+
+
+    </script>
+</body>
+
+</html>
