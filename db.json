@@ -1,0 +1,32 @@
+{
+    "clientes": [
+        {
+
+            "id":1,
+            "nome":"Rodrigo Arendt",
+            "email": "Rodrigo.arendt@hotmail.com",
+            "fone":"044-99935-3491"
+
+        },
+
+        {
+
+            "id":2,
+            "nome":"Maria da silva",
+            "email": "Maria@gmail.com",
+            "fone":"456-45678"
+
+        }
+    ],
+    
+    "produtos": [
+        {
+        "feijao": 1,
+        "acucar": 1,
+        "cafe": 2
+
+
+        }
+
+    ]
+}
